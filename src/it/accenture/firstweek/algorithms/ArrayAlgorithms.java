@@ -113,5 +113,23 @@ public class ArrayAlgorithms {
         return modeEntry.getKey();
     }
 
+    public static int binarySearch(double val, double array[]){
+        int start = 0;
+        int end = array.length;
+
+        while(start<end){
+            int pos = (start+end)/2;
+            if(array[pos]==val){
+                return pos;
+            }
+            if(val>array[pos]){
+                start = pos+1;
+            }else{
+                end = pos-1;
+            }
+        }
+        return -1;
+    }
+
 }
 
